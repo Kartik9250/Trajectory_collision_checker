@@ -19,7 +19,7 @@ obstacle_paths = [
     [(29, 48), (40, 46), (45, 30)]
 ]
 
-SAFETY_BUFFER = 2.5   # <<< change buffer distance here
+SAFETY_BUFFER = 2.5   # buffer distance
 
 TEXT_OFFSET = 2.5
 OFFSET_MODE = "right"   # "right" or "down"
