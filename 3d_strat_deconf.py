@@ -425,7 +425,7 @@ for entry_idx, exit_idx, entry_pos, exit_pos in collision_zones:
 
     ax.text(
         tx, ty, tz,
-        f"Entry\n({round(entry_pos[0],1)}, {round(entry_pos[1],1)}, {round(entry_pos[2],1)})",
+        f"({round(entry_pos[0],1)}, {round(entry_pos[1],1)}, {round(entry_pos[2],1)})",
         fontsize=8,
         color="red",
         zorder=11
@@ -439,7 +439,7 @@ for entry_idx, exit_idx, entry_pos, exit_pos in collision_zones:
 
     ax.text(
         tx, ty, tz,
-        f"Exit\n({round(exit_pos[0],1)}, {round(exit_pos[1],1)}, {round(exit_pos[2],1)})",
+        f"({round(exit_pos[0],1)}, {round(exit_pos[1],1)}, {round(exit_pos[2],1)})",
         fontsize=8,
         color="red",
         zorder=11
