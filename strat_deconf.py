@@ -1,5 +1,5 @@
 import numpy as np
-
+from typing import List, Tuple, Dict, Any, Optional
 # =====================================================
 # ================= GLOBAL CONFIG =====================
 # =====================================================
@@ -48,31 +48,41 @@ def get_obstacle_position_at_time(A, B, t0, t1, tq):
 # =====================================================
 
 def run_collision_check(
-    waypoints,
-    user_end_time,
-    obstacle_paths,
-    safety_buffer,
-
-    user_start_time=None,
-    obstacle_speeds=None,
-    obstacle_start_times=None
-):
+    waypoints: List[Tuple[float, float, float]],
+    user_end_time: float,
+    obstacle_paths: List[List[Tuple[float, float, float]]],
+    safety_buffer: float,
+    user_start_time: Optional[float] = None,
+    obstacle_speeds: Optional[List[float]] = None,
+    obstacle_start_times: Optional[List[float]] = None
+) -> Dict[str, Any]:
     """
-    Time-based 3D collision detection (NO visualization).
+    Time-based 3D collision detection.
 
-    Mandatory:
-        waypoints               : list[(x,y,z)]
-        user_end_time            : float
-        obstacle_paths           : list[list[(x,y,z)]]
-        safety_buffer            : float
+    Args:
+        waypoints (list[tuple[float, float, float]]):
+            User trajectory waypoints in 3D.
+        user_end_time (float):
+            Time at which the user trajectory ends.
+        obstacle_paths (list[list[tuple[float, float, float]]]):
+            List of obstacle trajectories, each defined by waypoints.
+        safety_buffer (float):
+            Minimum allowed distance between user and obstacle.
 
-    Optional:
-        user_start_time          : float
-        obstacle_speeds          : list[float]
-        obstacle_start_times     : list[float]
+        user_start_time (float, optional):
+            Start time of the user trajectory. Defaults to 0.0.
+        obstacle_speeds (list[float], optional):
+            Speeds for each obstacle trajectory.
+        obstacle_start_times (list[float], optional):
+            Start times for each obstacle trajectory.
 
     Returns:
-        dict with collision information
+        dict:
+            Collision information containing:
+            - collision_count (int)
+            - collision_zones (list[dict])
+            - user_path (list[tuple])
+            - user_times (list[float])
     """
 
     # ---------- Defaults ----------
