@@ -15,6 +15,7 @@ The tool evaluates a waypoint-defined user trajectory against one or more moving
 * Configurable safety buffer
 * Multiple moving obstacles
 * Structured collision output (time & position)
+* 3D visualisation of collision and waypoints
 
 ---
 
@@ -32,7 +33,7 @@ Minimal example showing how to call the collision checker and interpret results.
 ### `3d_strat_deconf.py`
 
 Standalone, self-contained variant with defaults and a direct execution block.
-Useful for quick testing.
+Useful for quick 3d visualisation.
 
 ### `test.py`
 
