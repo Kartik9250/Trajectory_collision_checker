@@ -41,9 +41,16 @@ Not required for core functionality.
 
 ---
 
+## Prerequisites
+
+* Python3 verion:3.13.9(tested), for installation visit [Python's website](https://www.python.org/downloads/) 
+* Matplotlib and numpy, to install run `pip install -r requirements.txt`
+
+---
+
 ## Typical Use
 
-1. Define user waypoints, speed, safety, and obstacle waypoints
+1. Define user waypoints, end_time, safety_buffer distance, and obstacle waypoints
 2. Call `run_collision_check()`
 3. Use collision results for replanning or safety handling
 
